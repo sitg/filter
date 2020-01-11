@@ -10,8 +10,8 @@ Filter is cloud software for filtering and forwarding telegram messages. It's **
 
 In the [web console](https://console.filter.sitg.app) for your Telegram account, add a filter rule and then press `Add action` to choose `Webhook`.
 
-Note that you can use a wildcard rule to forward all messages. To do that create a condition as this '_When **any user** in **any common chat** posts **anything**_'.
-To forward your messages sent from your Telegram account `USER FILTER` -> `Include my messages`, so you will get '_When **any user (including me)** in **any common chat** posts **anything**_'
+Note that you can use a wildcard rule to forward all messages. To do that create a condition as this `When any user in any common chat posts anything`.
+To forward your messages sent from your Telegram account `USER FILTER` -> `Include my messages`, so you will get `When any user (including me) in any common chat posts anything`
 
 <p align="center">
   <picture>
