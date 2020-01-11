@@ -95,7 +95,7 @@ interface WebhookMessage extends TelegramObject {
 }
 ```
 
-Type definitions for `TypeScript` [./types/webhool-message.d.ts](./types/webhook-message.d.ts). Those type definitions are derived from auto-generated java bindings [`TdApi.java`](`./types/TdApi.java`).
+Type definitions for `TypeScript` [./types/webhool-message.d.ts](./types/webhook-message.d.ts). Those type definitions are derived from auto-generated java bindings [`TdApi.java`](./types/TdApi.java).
 
 If interface has `_type` starting with `TdApi$` it means it was generated from `TdApi.java` without modifications. If `_type` starts with `Filter$` - it's one of `WebhookMessage`, `WebhookChat` or `WebhookUser` that are enriched with URLs to the media linked to the message, chat or user.
 
