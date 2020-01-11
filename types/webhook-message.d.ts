@@ -24,8 +24,8 @@ interface ChatTypeSupergroup extends TelegramObject {
   isChannel: boolean
 }
 
-interface Chat extends TelegramObject {
-  _type: 'TdApi$Chat'
+interface WebhookChat extends TelegramObject {
+  _type: 'Filter$WebhookChat'
   id: number
   photoUrl: string | null
   title: string
@@ -743,7 +743,7 @@ interface UserStatusLastMonth extends TelegramObject {
   _type: 'TdApi$UserStatusLastMonth'
 }
 
-interface User extends TelegramObject {
+interface WebhookUser extends TelegramObject {
   _type: 'Filter$User'
   firstName: string
   haveAccess: boolean
@@ -926,9 +926,9 @@ interface Message extends TelegramObject {
 
 interface WebhookMessage extends TelegramObject {
   _type: 'Filter$WebhookMessage'
-  chat: Chat | null
+  chat: WebhookChat | null
   chatMember: ChatMember | null
   fileUrl: string | null
   message: Message
-  user: User | null
+  user: WebhookUser | null
 }
