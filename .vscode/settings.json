@@ -13,5 +13,6 @@
   "prettier.printWidth": 100,
   "prettier.semi": false,
   "prettier.singleQuote": true,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "git.ignoreLimitWarning": true
 }
