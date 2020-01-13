@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "inlineSources": true,
+    "inlineSourceMap": true,
+    "sourceRoot": "/",
+    "target": "es2017",
+    "outDir": ".build",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "lib": ["dom", "es2017"],
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types", "../types"],
+    "rootDir": ".",
+    "resolveJsonModule": true
+  }
+}

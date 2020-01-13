@@ -1,0 +1,20 @@
+service:
+  name: filter-webhook-lambdas
+frameworkVersion: '>=1.1.0 <2.0.0'
+plugins:
+  - serverless-webpack
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-east-1
+  stage: prod
+
+functions:
+  webhook:
+    handler: index.webhook
+    memorySize: 512
+    timeout: 5
+    events:
+      - http:
+          path: '/filter-webhook'
+          method: post
