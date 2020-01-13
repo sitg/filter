@@ -1,30 +1,30 @@
-interface TelegramObject {
+export interface TelegramObject {
   _type: string
 }
 
-interface ChatTypeBasicGroup extends TelegramObject {
+export interface ChatTypeBasicGroup extends TelegramObject {
   _type: 'TdApi$ChatTypeBasicGroup'
   basicGroupId: number
 }
 
-interface ChatTypePrivate extends TelegramObject {
+export interface ChatTypePrivate extends TelegramObject {
   _type: 'TdApi$ChatTypePrivate'
   userId: number
 }
 
-interface ChatTypeSecret extends TelegramObject {
+export interface ChatTypeSecret extends TelegramObject {
   _type: 'TdApi$ChatTypeSecret'
   secretChatId: number
   userId: number
 }
 
-interface ChatTypeSupergroup extends TelegramObject {
+export interface ChatTypeSupergroup extends TelegramObject {
   _type: 'TdApi$ChatTypeSupergroup'
   supergroupId: number
   isChannel: boolean
 }
 
-interface WebhookChat extends TelegramObject {
+export interface WebhookChat extends TelegramObject {
   _type: 'Filter$WebhookChat'
   id: number
   photoUrl: string | null
@@ -32,19 +32,19 @@ interface WebhookChat extends TelegramObject {
   type: ChatTypeBasicGroup | ChatTypePrivate | ChatTypeSecret | ChatTypeSupergroup
 }
 
-interface BotCommand extends TelegramObject {
+export interface BotCommand extends TelegramObject {
   _type: 'TdApi$BotCommand'
   command: string
   description: string
 }
 
-interface BotInfo extends TelegramObject {
+export interface BotInfo extends TelegramObject {
   _type: 'TdApi$BotInfo'
   description: string
   commands: BotCommand[]
 }
 
-interface ChatMemberStatusAdministrator extends TelegramObject {
+export interface ChatMemberStatusAdministrator extends TelegramObject {
   _type: 'TdApi$ChatMemberStatusAdministrator'
   customTitle: string
   canBeEdited: boolean
@@ -58,22 +58,22 @@ interface ChatMemberStatusAdministrator extends TelegramObject {
   canPromoteMembers: boolean
 }
 
-interface ChatMemberStatusBanned extends TelegramObject {
+export interface ChatMemberStatusBanned extends TelegramObject {
   _type: 'TdApi$ChatMemberStatusBanned'
   bannedUntilDate: number
 }
 
-interface ChatMemberStatusCreator extends TelegramObject {
+export interface ChatMemberStatusCreator extends TelegramObject {
   _type: 'TdApi$ChatMemberStatusCreator'
   customTitle: string
   isMember: boolean
 }
 
-interface ChatMemberStatusLeft extends TelegramObject {
+export interface ChatMemberStatusLeft extends TelegramObject {
   _type: 'TdApi$ChatMemberStatusLeft'
 }
 
-interface ChatPermissions extends TelegramObject {
+export interface ChatPermissions extends TelegramObject {
   _type: 'TdApi$ChatPermissions'
   canSendMessages: boolean
   canSendMediaMessages: boolean
@@ -85,96 +85,96 @@ interface ChatPermissions extends TelegramObject {
   canPinMessages: boolean
 }
 
-interface ChatMemberStatusRestricted extends TelegramObject {
+export interface ChatMemberStatusRestricted extends TelegramObject {
   _type: 'TdApi$ChatMemberStatusRestricted'
   isMember: boolean
   restrictedUntilDate: number
   permissions: ChatPermissions
 }
 
-interface ChatMemberStatusMember extends TelegramObject {
+export interface ChatMemberStatusMember extends TelegramObject {
   _type: 'TdApi$ChatMemberStatusMember'
 }
 
-interface ChatMember extends TelegramObject {
+export interface ChatMember extends TelegramObject {
   _type: 'TdApi$ChatMember'
   userId: number
   inviterUserId: number
   joinedChatDate: number
-  status: ChatMemberStatus
+  status: ChatMemberStatusRestricted | ChatMemberStatusMember
   botInfo: BotInfo
 }
 
 // message
 
-interface TextEntityTypeMention extends TelegramObject {
+export interface TextEntityTypeMention extends TelegramObject {
   _type: 'TdApi$TextEntityTypeMention'
 }
 
-interface TextEntityTypeHashtag extends TelegramObject {
+export interface TextEntityTypeHashtag extends TelegramObject {
   _type: 'TdApi$TextEntityTypeHashtag'
 }
 
-interface TextEntityTypeCashtag extends TelegramObject {
+export interface TextEntityTypeCashtag extends TelegramObject {
   _type: 'TdApi$TextEntityTypeCashtag'
 }
 
-interface TextEntityTypeBotCommand extends TelegramObject {
+export interface TextEntityTypeBotCommand extends TelegramObject {
   _type: 'TdApi$TextEntityTypeBotCommand'
 }
 
-interface TextEntityTypeUrl extends TelegramObject {
+export interface TextEntityTypeUrl extends TelegramObject {
   _type: 'TdApi$TextEntityTypeUrl'
 }
 
-interface TextEntityTypeEmailAddress extends TelegramObject {
+export interface TextEntityTypeEmailAddress extends TelegramObject {
   _type: 'TdApi$TextEntityTypeEmailAddress'
 }
 
-interface TextEntityTypePhoneNumber extends TelegramObject {
+export interface TextEntityTypePhoneNumber extends TelegramObject {
   _type: 'TdApi$TextEntityTypePhoneNumber'
 }
 
-interface TextEntityTypeBold extends TelegramObject {
+export interface TextEntityTypeBold extends TelegramObject {
   _type: 'TdApi$TextEntityTypeBold'
 }
 
-interface TextEntityTypeItalic extends TelegramObject {
+export interface TextEntityTypeItalic extends TelegramObject {
   _type: 'TdApi$TextEntityTypeItalic'
 }
 
-interface TextEntityTypeUnderline extends TelegramObject {
+export interface TextEntityTypeUnderline extends TelegramObject {
   _type: 'TdApi$TextEntityTypeUnderline'
 }
 
-interface TextEntityTypeStrikethrough extends TelegramObject {
+export interface TextEntityTypeStrikethrough extends TelegramObject {
   _type: 'TdApi$TextEntityTypeStrikethrough'
 }
 
-interface TextEntityTypeCode extends TelegramObject {
+export interface TextEntityTypeCode extends TelegramObject {
   _type: 'TdApi$TextEntityTypeCode'
 }
 
-interface TextEntityTypePre extends TelegramObject {
+export interface TextEntityTypePre extends TelegramObject {
   _type: 'TdApi$TextEntityTypePre'
 }
 
-interface TextEntityTypePreCode extends TelegramObject {
+export interface TextEntityTypePreCode extends TelegramObject {
   _type: 'TdApi$TextEntityTypePreCode'
   language: string
 }
 
-interface TextEntityTypeTextUrl extends TelegramObject {
+export interface TextEntityTypeTextUrl extends TelegramObject {
   _type: 'TdApi$TextEntityTypeTextUrl'
   url: string
 }
 
-interface TextEntityTypeMentionName extends TelegramObject {
+export interface TextEntityTypeMentionName extends TelegramObject {
   _type: 'TdApi$TextEntityTypeMentionName'
   userId: number
 }
 
-interface TextEntity extends TelegramObject {
+export interface TextEntity extends TelegramObject {
   _type: 'TdApi$TextEntity'
   offset: number
   length: number
@@ -197,20 +197,20 @@ interface TextEntity extends TelegramObject {
     | TextEntityTypeMentionName
 }
 
-interface FormattedText extends TelegramObject {
+export interface FormattedText extends TelegramObject {
   _type: 'TdApi$FormattedText'
   text: string
   entities: TextEntity[]
 }
 
-interface Minithumbnail extends TelegramObject {
+export interface Minithumbnail extends TelegramObject {
   _type: 'TdApi$Minithumbnail'
   width: number
   height: number
   data: number[]
 }
 
-interface LocalFile extends TelegramObject {
+export interface LocalFile extends TelegramObject {
   _type: 'TdApi$LocalFile'
   path: string
   canBeDownloaded: boolean
@@ -222,7 +222,7 @@ interface LocalFile extends TelegramObject {
   downloadedSize: number
 }
 
-interface RemoteFile extends TelegramObject {
+export interface RemoteFile extends TelegramObject {
   _type: 'TdApi$RemoteFile'
   id: string
   uniqueId: string
@@ -231,7 +231,7 @@ interface RemoteFile extends TelegramObject {
   uploadedSize: number
 }
 
-interface File extends TelegramObject {
+export interface File extends TelegramObject {
   _type: 'TdApi$File'
   id: number
   size: number
@@ -240,7 +240,7 @@ interface File extends TelegramObject {
   remote: RemoteFile
 }
 
-interface PhotoSize extends TelegramObject {
+export interface PhotoSize extends TelegramObject {
   _type: 'TdApi$PhotoSize'
   type: string
   photo: File
@@ -248,14 +248,14 @@ interface PhotoSize extends TelegramObject {
   height: number
 }
 
-interface Photo extends TelegramObject {
+export interface Photo extends TelegramObject {
   _type: 'TdApi$Photo'
   hasStickers: boolean
   minithumbnail: Minithumbnail
   sizes: PhotoSize[]
 }
 
-interface Animation extends TelegramObject {
+export interface Animation extends TelegramObject {
   _type: 'TdApi$Animation'
   duration: number
   width: number
@@ -267,7 +267,7 @@ interface Animation extends TelegramObject {
   animation: File
 }
 
-interface Audio extends TelegramObject {
+export interface Audio extends TelegramObject {
   _type: 'TdApi$Audio'
   duration: number
   title: string
@@ -279,7 +279,7 @@ interface Audio extends TelegramObject {
   audio: File
 }
 
-interface Document extends TelegramObject {
+export interface Document extends TelegramObject {
   _type: 'TdApi$Document'
   fileName: string
   mimeType: string
@@ -288,11 +288,11 @@ interface Document extends TelegramObject {
   document: File
 }
 
-interface MaskPoint extends TelegramObject {
+export interface MaskPoint extends TelegramObject {
   _type: 'TdApi$MaskPoint'
 }
 
-interface MaskPosition extends TelegramObject {
+export interface MaskPosition extends TelegramObject {
   _type: 'TdApi$MaskPosition'
   point: MaskPoint
   xShift: number
@@ -300,7 +300,7 @@ interface MaskPosition extends TelegramObject {
   scale: number
 }
 
-interface Sticker extends TelegramObject {
+export interface Sticker extends TelegramObject {
   _type: 'TdApi$Sticker'
   setId: number
   width: number
@@ -313,7 +313,7 @@ interface Sticker extends TelegramObject {
   sticker: File
 }
 
-interface Video extends TelegramObject {
+export interface Video extends TelegramObject {
   _type: 'TdApi$Video'
   duration: number
   width: number
@@ -327,7 +327,7 @@ interface Video extends TelegramObject {
   video: File
 }
 
-interface VideoNote extends TelegramObject {
+export interface VideoNote extends TelegramObject {
   _type: 'TdApi$VideoNote'
   duration: number
   length: number
@@ -336,7 +336,7 @@ interface VideoNote extends TelegramObject {
   video: File
 }
 
-interface VoiceNote extends TelegramObject {
+export interface VoiceNote extends TelegramObject {
   _type: 'TdApi$VoiceNote'
   duration: number
   waveform: number[]
@@ -344,7 +344,7 @@ interface VoiceNote extends TelegramObject {
   voice: File
 }
 
-interface WebPage extends TelegramObject {
+export interface WebPage extends TelegramObject {
   _type: 'TdApi$WebPage'
   url: string
   displayUrl: string
@@ -369,85 +369,85 @@ interface WebPage extends TelegramObject {
   instantViewVersion: number
 }
 
-interface MessageText extends TelegramObject {
+export interface MessageText extends TelegramObject {
   _type: 'TdApi$MessageText'
   text: FormattedText
   webPage: WebPage
 }
 
-interface MessageAnimation extends TelegramObject {
+export interface MessageAnimation extends TelegramObject {
   _type: 'TdApi$MessageAnimation'
   animation: Animation
   caption: FormattedText
   isSecret: boolean
 }
 
-interface MessageAudio extends TelegramObject {
+export interface MessageAudio extends TelegramObject {
   _type: 'TdApi$MessageAudio'
   audio: Audio
   caption: FormattedText
 }
 
-interface MessageDocument extends TelegramObject {
+export interface MessageDocument extends TelegramObject {
   _type: 'TdApi$MessageDocument'
   document: Document
   caption: FormattedText
 }
 
-interface MessagePhoto extends TelegramObject {
+export interface MessagePhoto extends TelegramObject {
   _type: 'TdApi$MessagePhoto'
   photo: Photo
   caption: FormattedText
   isSecret: boolean
 }
 
-interface MessageExpiredPhoto extends TelegramObject {
+export interface MessageExpiredPhoto extends TelegramObject {
   _type: 'TdApi$MessageExpiredPhoto'
 }
 
-interface MessageSticker extends TelegramObject {
+export interface MessageSticker extends TelegramObject {
   _type: 'TdApi$MessageSticker'
   sticker: Sticker
 }
 
-interface MessageVideo extends TelegramObject {
+export interface MessageVideo extends TelegramObject {
   _type: 'TdApi$MessageVideo'
   video: Video
   caption: FormattedText
   isSecret: boolean
 }
 
-interface MessageExpiredVideo extends TelegramObject {
+export interface MessageExpiredVideo extends TelegramObject {
   _type: 'TdApi$MessageExpiredVideo'
 }
 
-interface MessageVideoNote extends TelegramObject {
+export interface MessageVideoNote extends TelegramObject {
   _type: 'TdApi$MessageVideoNote'
   videoNote: VideoNote
   isViewed: boolean
   isSecret: boolean
 }
 
-interface MessageVoiceNote extends TelegramObject {
+export interface MessageVoiceNote extends TelegramObject {
   _type: 'TdApi$MessageVoiceNote'
   voiceNote: VoiceNote
   caption: FormattedText
   isListened: boolean
 }
 
-interface Location {
+export interface Location {
   latitude: number
   longitude: number
 }
 
-interface MessageLocation extends TelegramObject {
+export interface MessageLocation extends TelegramObject {
   _type: 'TdApi$MessageLocation'
   location: Location
   livePeriod: number
   expiresIn: number
 }
 
-interface Venue {
+export interface Venue {
   location: Location
   title: string
   address: string
@@ -456,12 +456,12 @@ interface Venue {
   type: string
 }
 
-interface MessageVenue extends TelegramObject {
+export interface MessageVenue extends TelegramObject {
   _type: 'TdApi$MessageVenue'
   venue: Venue
 }
 
-interface Contact {
+export interface Contact {
   phoneNumber: string
   firstName: string
   lastName: string
@@ -469,12 +469,12 @@ interface Contact {
   userId: number
 }
 
-interface MessageContact extends TelegramObject {
+export interface MessageContact extends TelegramObject {
   _type: 'TdApi$MessageContact'
   contact: Contact
 }
 
-interface Game {
+export interface Game {
   id: number
   shortName: string
   title: string
@@ -484,12 +484,12 @@ interface Game {
   animation: Animation
 }
 
-interface MessageGame extends TelegramObject {
+export interface MessageGame extends TelegramObject {
   _type: 'TdApi$MessageGame'
   game: Game
 }
 
-interface PollOption {
+export interface PollOption {
   text: string
   voterCount: number
   votePercentage: number
@@ -497,7 +497,7 @@ interface PollOption {
   isBeingChosen: boolean
 }
 
-interface Poll {
+export interface Poll {
   id: number
   question: string
   options: PollOption[]
@@ -505,12 +505,12 @@ interface Poll {
   isClosed: boolean
 }
 
-interface MessagePoll extends TelegramObject {
+export interface MessagePoll extends TelegramObject {
   _type: 'TdApi$MessagePoll'
   poll: Poll
 }
 
-interface MessageInvoice extends TelegramObject {
+export interface MessageInvoice extends TelegramObject {
   _type: 'TdApi$MessageInvoice'
   title: string
   description: string
@@ -523,98 +523,98 @@ interface MessageInvoice extends TelegramObject {
   receiptMessageId: number
 }
 
-interface CallDiscardReason {}
+export interface CallDiscardReason {}
 
-interface MessageCall extends TelegramObject {
+export interface MessageCall extends TelegramObject {
   _type: 'TdApi$MessageCall'
   discardReason: CallDiscardReason
   duration: number
 }
 
-interface MessageBasicGroupChatCreate extends TelegramObject {
+export interface MessageBasicGroupChatCreate extends TelegramObject {
   _type: 'TdApi$MessageBasicGroupChatCreate'
   title: string
   memberUserIds: number[]
 }
 
-interface MessageSupergroupChatCreate extends TelegramObject {
+export interface MessageSupergroupChatCreate extends TelegramObject {
   _type: 'TdApi$MessageSupergroupChatCreate'
   title: string
 }
 
-interface MessageChatChangeTitle extends TelegramObject {
+export interface MessageChatChangeTitle extends TelegramObject {
   _type: 'TdApi$MessageChatChangeTitle'
   title: string
 }
 
-interface MessageChatChangePhoto extends TelegramObject {
+export interface MessageChatChangePhoto extends TelegramObject {
   _type: 'TdApi$MessageChatChangePhoto'
   photo: Photo
 }
 
-interface MessageChatDeletePhoto extends TelegramObject {
+export interface MessageChatDeletePhoto extends TelegramObject {
   _type: 'TdApi$MessageChatDeletePhoto'
 }
 
-interface MessageChatAddMembers extends TelegramObject {
+export interface MessageChatAddMembers extends TelegramObject {
   _type: 'TdApi$MessageChatAddMembers'
   memberUserIds: number[]
 }
 
-interface MessageChatJoinByLink extends TelegramObject {
+export interface MessageChatJoinByLink extends TelegramObject {
   _type: 'TdApi$MessageChatJoinByLink'
 }
 
-interface MessageChatDeleteMember extends TelegramObject {
+export interface MessageChatDeleteMember extends TelegramObject {
   _type: 'TdApi$MessageChatDeleteMember'
   userId: number
 }
 
-interface MessageChatUpgradeTo extends TelegramObject {
+export interface MessageChatUpgradeTo extends TelegramObject {
   _type: 'TdApi$MessageChatUpgradeTo'
   supergroupId: number
 }
 
-interface MessageChatUpgradeFrom extends TelegramObject {
+export interface MessageChatUpgradeFrom extends TelegramObject {
   _type: 'TdApi$MessageChatUpgradeFrom'
   title: string
   basicGroupId: number
 }
 
-interface MessagePinMessage extends TelegramObject {
+export interface MessagePinMessage extends TelegramObject {
   _type: 'TdApi$MessagePinMessage'
   messageId: number
 }
 
-interface MessageScreenshotTaken extends TelegramObject {
+export interface MessageScreenshotTaken extends TelegramObject {
   _type: 'TdApi$MessageScreenshotTaken'
 }
 
-interface MessageChatSetTtl extends TelegramObject {
+export interface MessageChatSetTtl extends TelegramObject {
   _type: 'TdApi$MessageChatSetTtl'
   ttl: number
 }
 
-interface MessageCustomServiceAction extends TelegramObject {
+export interface MessageCustomServiceAction extends TelegramObject {
   _type: 'TdApi$MessageCustomServiceAction'
   text: string
 }
 
-interface MessageGameScore extends TelegramObject {
+export interface MessageGameScore extends TelegramObject {
   _type: 'TdApi$MessageGameScore'
   gameMessageId: number
   gameId: number
   score: number
 }
 
-interface MessagePaymentSuccessful extends TelegramObject {
+export interface MessagePaymentSuccessful extends TelegramObject {
   _type: 'TdApi$MessagePaymentSuccessful'
   invoiceMessageId: number
   currency: string
   totalAmount: number
 }
 
-interface Address {
+export interface Address {
   countryCode: string
   state: string
   city: string
@@ -623,14 +623,14 @@ interface Address {
   postalCode: string
 }
 
-interface OrderInfo {
+export interface OrderInfo {
   name: string
   phoneNumber: string
   emailAddress: string
   shippingAddress: Address
 }
 
-interface MessagePaymentSuccessfulBot extends TelegramObject {
+export interface MessagePaymentSuccessfulBot extends TelegramObject {
   _type: 'TdApi$MessagePaymentSuccessfulBot'
   invoiceMessageId: number
   currency: string
@@ -642,31 +642,31 @@ interface MessagePaymentSuccessfulBot extends TelegramObject {
   providerPaymentChargeId: string
 }
 
-interface MessageContactRegistered extends TelegramObject {
+export interface MessageContactRegistered extends TelegramObject {
   _type: 'TdApi$MessageContactRegistered'
 }
 
-interface MessageWebsiteConnected extends TelegramObject {
+export interface MessageWebsiteConnected extends TelegramObject {
   _type: 'TdApi$MessageWebsiteConnected'
   domainName: string
 }
 
-interface PassportElementType extends TelegramObject {
+export interface PassportElementType extends TelegramObject {
   _type: 'TdApi$PassportElementType'
 }
 
-interface MessagePassportDataSent extends TelegramObject {
+export interface MessagePassportDataSent extends TelegramObject {
   _type: 'TdApi$MessagePassportDataSent'
   types: PassportElementType[]
 }
 
-interface DatedFile extends TelegramObject {
+export interface DatedFile extends TelegramObject {
   _type: 'TdApi$DatedFile'
   file: File
   date: number
 }
 
-interface EncryptedPassportElement extends TelegramObject {
+export interface EncryptedPassportElement extends TelegramObject {
   _type: 'TdApi$EncryptedPassportElement'
   type: PassportElementType
   data: number[]
@@ -679,32 +679,32 @@ interface EncryptedPassportElement extends TelegramObject {
   hash: string
 }
 
-interface EncryptedCredentials extends TelegramObject {
+export interface EncryptedCredentials extends TelegramObject {
   _type: 'TdApi$EncryptedCredentials'
   data: number[]
   hash: number[]
   secret: number[]
 }
 
-interface MessagePassportDataReceived extends TelegramObject {
+export interface MessagePassportDataReceived extends TelegramObject {
   _type: 'TdApi$MessagePassportDataReceived'
   elements: EncryptedPassportElement[]
   credentials: EncryptedCredentials
 }
 
-interface MessageUnsupported extends TelegramObject {
+export interface MessageUnsupported extends TelegramObject {
   _type: 'TdApi$MessageUnsupported'
 }
 
-interface UserTypeRegular extends TelegramObject {
+export interface UserTypeRegular extends TelegramObject {
   _type: 'TdApi$UserTypeRegular'
 }
 
-interface UserTypeDeleted extends TelegramObject {
+export interface UserTypeDeleted extends TelegramObject {
   _type: 'TdApi$UserTypeDeleted'
 }
 
-interface UserTypeBot extends TelegramObject {
+export interface UserTypeBot extends TelegramObject {
   _type: 'TdApi$UserTypeBot'
   canJoinGroups: boolean
   canReadAllGroupMessages: boolean
@@ -713,37 +713,37 @@ interface UserTypeBot extends TelegramObject {
   needLocation: boolean
 }
 
-interface UserTypeUnknown extends TelegramObject {
+export interface UserTypeUnknown extends TelegramObject {
   _type: 'TdApi$UserTypeUnknown'
 }
 
-interface UserStatusEmpty extends TelegramObject {
+export interface UserStatusEmpty extends TelegramObject {
   _type: 'TdApi$UserStatusEmpty'
 }
 
-interface UserStatusOnline extends TelegramObject {
+export interface UserStatusOnline extends TelegramObject {
   _type: 'TdApi$UserStatusOnline'
   expires: number
 }
 
-interface UserStatusOffline extends TelegramObject {
+export interface UserStatusOffline extends TelegramObject {
   _type: 'TdApi$UserStatusOffline'
   wasOnline: number
 }
 
-interface UserStatusRecently extends TelegramObject {
+export interface UserStatusRecently extends TelegramObject {
   _type: 'TdApi$UserStatusRecently'
 }
 
-interface UserStatusLastWeek extends TelegramObject {
+export interface UserStatusLastWeek extends TelegramObject {
   _type: 'TdApi$UserStatusLastWeek'
 }
 
-interface UserStatusLastMonth extends TelegramObject {
+export interface UserStatusLastMonth extends TelegramObject {
   _type: 'TdApi$UserStatusLastMonth'
 }
 
-interface WebhookUser extends TelegramObject {
+export interface WebhookUser extends TelegramObject {
   _type: 'Filter$User'
   firstName: string
   haveAccess: boolean
@@ -765,7 +765,7 @@ interface WebhookUser extends TelegramObject {
   username: string
 }
 
-interface MessageSendingStateFailed extends TelegramObject {
+export interface MessageSendingStateFailed extends TelegramObject {
   _type: 'TdApi$MessageSendingStateFailed'
   errorCode: number
   errorMessage: string
@@ -773,34 +773,34 @@ interface MessageSendingStateFailed extends TelegramObject {
   retryAfter: number
 }
 
-interface MessageSendingStatePending extends TelegramObject {
+export interface MessageSendingStatePending extends TelegramObject {
   _type: 'TdApi$MessageSendingStatePending'
 }
 
-interface MessageSchedulingStateSendAtDate extends TelegramObject {
+export interface MessageSchedulingStateSendAtDate extends TelegramObject {
   _type: 'TdApi$MessageSchedulingStateSendAtDate'
   sendDate: number
 }
 
-interface MessageSchedulingStateSendWhenOnline extends TelegramObject {
+export interface MessageSchedulingStateSendWhenOnline extends TelegramObject {
   _type: 'TdApi$MessageSchedulingStateSendWhenOnline'
 }
 
-interface MessageForwardOriginChannel extends MessageForwardOrigin {
+export interface MessageForwardOriginChannel extends TelegramObject {
   chatId: number
   messageId: number
   authorSignature: string
 }
 
-interface MessageForwardOriginHiddenUser extends MessageForwardOrigin {
+export interface MessageForwardOriginHiddenUser extends TelegramObject {
   senderName: string
 }
 
-interface MessageForwardOriginUser extends MessageForwardOrigin {
+export interface MessageForwardOriginUser extends TelegramObject {
   senderUserId: number
 }
 
-interface MessageForwardInfo extends TelegramObject {
+export interface MessageForwardInfo extends TelegramObject {
   _type: 'TdApi$MessageForwardInfo'
   origin: MessageForwardOriginChannel | MessageForwardOriginHiddenUser | MessageForwardOriginUser
   date: number
@@ -808,42 +808,42 @@ interface MessageForwardInfo extends TelegramObject {
   fromMessageId: number
 }
 
-interface ReplyMarkupForceReply extends TelegramObject {
+export interface ReplyMarkupForceReply extends TelegramObject {
   _type: 'TdApi$ReplyMarkupForceReply'
   isPersonal: boolean
 }
 
-interface InlineKeyboardButtonType extends TelegramObject {
+export interface InlineKeyboardButtonType extends TelegramObject {
   _type: 'TdApi$InlineKeyboardButtonType'
 }
 
-interface InlineKeyboardButton extends TelegramObject {
+export interface InlineKeyboardButton extends TelegramObject {
   _type: 'TdApi$InlineKeyboardButton'
   text: string
   type: InlineKeyboardButtonType
 }
 
-interface ReplyMarkupInlineKeyboard extends TelegramObject {
+export interface ReplyMarkupInlineKeyboard extends TelegramObject {
   _type: 'TdApi$ReplyMarkupInlineKeyboard'
   rows: InlineKeyboardButton[][]
 }
 
-interface ReplyMarkupRemoveKeyboard extends TelegramObject {
+export interface ReplyMarkupRemoveKeyboard extends TelegramObject {
   _type: 'TdApi$ReplyMarkupRemoveKeyboard'
   isPersonal: boolean
 }
 
-interface KeyboardButtonType extends TelegramObject {
+export interface KeyboardButtonType extends TelegramObject {
   _type: 'TdApi$KeyboardButtonType'
 }
 
-interface KeyboardButton extends TelegramObject {
+export interface KeyboardButton extends TelegramObject {
   _type: 'TdApi$KeyboardButton'
   text: string
   type: KeyboardButtonType
 }
 
-interface ReplyMarkupShowKeyboard extends TelegramObject {
+export interface ReplyMarkupShowKeyboard extends TelegramObject {
   _type: 'TdApi$ReplyMarkupShowKeyboard'
   rows: KeyboardButton[][]
   resizeKeyboard: boolean
@@ -851,7 +851,7 @@ interface ReplyMarkupShowKeyboard extends TelegramObject {
   isPersonal: boolean
 }
 
-interface Message extends TelegramObject {
+export interface Message extends TelegramObject {
   _type: 'TdApi$Message'
   id: number
   senderUserId: number
@@ -924,7 +924,7 @@ interface Message extends TelegramObject {
     | ReplyMarkupRemoveKeyboard
 }
 
-interface WebhookMessage extends TelegramObject {
+export interface WebhookMessage extends TelegramObject {
   _type: 'Filter$WebhookMessage'
   chat: WebhookChat | null
   chatMember: ChatMember | null
