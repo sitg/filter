@@ -5,24 +5,20 @@
   "dependencies": {
     "aws-lambda": "^1.0.5",
     "crypto": "^1.0.1",
-    "prettier": "1.19.1",
-    "request-promise": "^4.2.5"
+    "prettier": "1.19.1"
   },
   "devDependencies": {
     "@types/debug": "^4.1.2",
-    "@types/request-promise": "^4.1.45",
     "@types/aws-lambda": "8.10.25",
     "@types/node": "^13.1.6",
     "serverless-webpack": "^5.3.1",
     "source-map-support": "^0.5.16",
     "ts-loader": "^6.2.1",
-    "ts-node": "^8.1.0",
     "typescript": "^3.7.4",
     "webpack": "^4.41.5"
   },
   "scripts": {
     "invoke-local": "serverless invoke local --function webhook --path example-payload.json",
-    "lambdas": "node --expose-gc --max_old_space_size=3008 -r ts-node/register index.ts",
-    "deploy": "unset AWS_PROFILE && SLS_DEBUG=1 serverless deploy"
+    "deploy": "serverless deploy"
   }
 }
