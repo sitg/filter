@@ -787,16 +787,19 @@ export interface MessageSchedulingStateSendWhenOnline extends TelegramObject {
 }
 
 export interface MessageForwardOriginChannel extends TelegramObject {
+  _type: 'TdApi$MessageForwardOriginChannel'
   chatId: number
   messageId: number
   authorSignature: string
 }
 
 export interface MessageForwardOriginHiddenUser extends TelegramObject {
+  _type: 'TdApi$MessageForwardOriginHiddenUser'
   senderName: string
 }
 
 export interface MessageForwardOriginUser extends TelegramObject {
+  _type: 'TdApi$MessageForwardOriginUser'
   senderUserId: number
 }
 
