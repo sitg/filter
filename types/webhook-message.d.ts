@@ -927,6 +927,14 @@ export interface Message extends TelegramObject {
     | ReplyMarkupRemoveKeyboard
 }
 
+
+export interface ForwardedMessageAuthor extends TelegramObject {
+  _type: 'Filter$ForwardedMessageAuthor'
+  user: WebhookUser | null
+  chat: WebhookChat | null
+  name: string | null
+}
+
 export interface WebhookMessage extends TelegramObject {
   _type: 'Filter$WebhookMessage'
   chat: WebhookChat | null
@@ -934,4 +942,6 @@ export interface WebhookMessage extends TelegramObject {
   fileUrl: string | null
   message: Message
   user: WebhookUser | null
+  forwardedMessageAuthor: ForwardedMessageAuthor | null
 }
+
